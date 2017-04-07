@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import javax.imageio.ImageIO;
 
@@ -87,7 +88,7 @@ public class ImageFilesHelper {
                     } catch (IOException e) {
                         return null;
                     }
-                }).filter(f -> f != null).collect(Collectors.toList());
+                }).filter(Objects::nonNull).collect(Collectors.toList());
     }
 
     public static boolean isPrior(String fileName) {
